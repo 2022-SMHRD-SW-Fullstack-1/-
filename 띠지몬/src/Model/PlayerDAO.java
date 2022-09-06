@@ -109,6 +109,8 @@ public class PlayerDAO {
 			for (int j = 0; j < All.size(); j++) {
 				System.out.println(j + 1 + ", " + All.get(j).getD_name());
 			}
+
+			System.out.println();
 			System.out.print("영입 할 선수의 번호를 선택하세요 >> ");
 			int num = sc.nextInt();
 			My.add(All.get(num - 1));
@@ -119,6 +121,8 @@ public class PlayerDAO {
 				System.out.println(All.get(i).getD_name());
 			}
 		}
+
+		System.out.println();
 
 		for (int i = 1; i <= 4; i++) {
 			for (int j = 0; j < All.size(); j++) {
@@ -143,15 +147,24 @@ public class PlayerDAO {
 	}
 
 	public void M() {
-		System.out.println("나의 선수 명단 : ");
-		for (int i = 0; i < My.size(); i++) {
-			System.out.println(i + 1 + ", " + My.get(i).getD_name() + " 능력치 :  " + My.get(i).getAbility());
+
+		if (My.size() != 0) {
+			for (int i = 0; i < My.size(); i++) {
+				System.out.println("나의 선수 명단 : ");
+				System.out.println(i + 1 + ", " + My.get(i).getD_name() + " 능력치 :  " + My.get(i).getAbility());
+			}
+		}else {
+			System.out.println("엔트리를 먼저 생성 해주세요.");
 		}
 	}
 
 	public ArrayList<PlayerDTO> attack() {
 		ArrayList<PlayerDTO> temp = new ArrayList<>();
 		ArrayList<PlayerDTO> 넘길거다 = new ArrayList<>();
+		
+		
+		
+		
 		for (int i = 0; i < My.size(); i++) {
 			temp.add(My.get(i));
 		}
@@ -229,6 +242,7 @@ public class PlayerDAO {
 			}
 		}
 		System.out.println("공수 교대!!!!!!!\n");
+		System.out.println();
 		return 넘길거다;
 	}
 
@@ -348,7 +362,7 @@ public class PlayerDAO {
 		ArrayList<PlayerDTO> totalList = new ArrayList<>();
 
 		try {
-			String sql = "select d_name, d_ability, d_score from playerInfo ";
+			String sql = "select d_name, d_ability, d_score from playerInfo order by d_score desc";
 			psmt = conn.prepareStatement(sql);
 
 			rs = psmt.executeQuery();
@@ -388,6 +402,22 @@ public class PlayerDAO {
 			close();
 		}
 
+	}
+
+	public void reSetAbility() {
+		
+		getCon();
+		try {
+			String sq = "UPDATE playerinfo SET d_ability = ROUND(DBMS_RANDOM.VALUE(0, 100)) WHERE d_name is not null";
+			psmt = conn.prepareStatement(sq);
+			psmt.executeUpdate();
+			// }
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
 	}
 
 }
