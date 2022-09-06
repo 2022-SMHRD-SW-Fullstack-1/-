@@ -3,8 +3,10 @@ package Model;
 public class DMusic {
 	
 	private String musicPath;
+	private String title;
 	
-	public DMusic(String musicPath) {
+	public DMusic(String title, String musicPath) {
+		this.title = title;
 		this.musicPath = musicPath;	
 	}
 	

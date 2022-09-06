@@ -1,5 +1,5 @@
 package View;
-import java.io.File;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +12,7 @@ import Controller.GameController;
 import Controller.MemberController;
 import Model.MemberDTO;
 import Model.PlayerDTO;
+
 public class GameMain {
 	public static void main(String[] args) {
 		int a = 0;
@@ -21,12 +22,13 @@ public class GameMain {
 		MemberController mcont = new MemberController();
 		
 		DMusicController dc = new DMusicController();
-		
-		File Clap = new File("dmusic/hidisimon.wav");
-		dc.gameStart(Clap);
+		int index = 0;
 		
 		int result;
 		int b;
+		
+		dc.opening();
+		
 		while (true) {
 			gcont.conRs();
 			System.out.print("[1] 회원가입 [2] 로그인 [3] 조회 [4] 닉네임 변경 [5] 탈퇴 [6] 종료  >> ");
@@ -73,6 +75,7 @@ public class GameMain {
 			} else if (menu == 5) { // 탈퇴
 				ArrayList<MemberDTO> resultList = new ArrayList<MemberDTO>();
 				resultList = mcont.conSelect();
+				dc.ending();
 				for (int i = 0; i < resultList.size(); i++) {
 					System.out.println(resultList.get(i).getId() + " / " + resultList.get(i).getNick());
 				}
@@ -133,8 +136,10 @@ public class GameMain {
 			}
 //================================================================================
 		}
+
 			if (a == 1) {
 				while (true) {
+					dc.battle();
 					gcont.printMenu();
 					int menu = sc.nextInt();
 					if (menu == 1) { // 엔트리 생성 & 선택
