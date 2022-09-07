@@ -202,7 +202,7 @@ public class PlayerDAO {
 					}
 				}
 
-				if (my.getAbility() < op.getAbility()) {
+				if (my.getAbility() <= op.getAbility()+9) {
 					System.out.print("스트라이크!");
 					if (cnt == 0) {
 						System.out.println(" ● ○ ○ ");
@@ -252,6 +252,12 @@ public class PlayerDAO {
 
 		ArrayList<PlayerDTO> 넘길거다 = new ArrayList<>();
 		ArrayList<PlayerDTO> temp = new ArrayList<>();
+		
+		for (int i = 0; i < My.size(); i++) {
+			temp.add(My.get(i));
+		}
+		int num1=0;
+		
 
 		int Lotto[] = new int[3];
 
@@ -267,15 +273,21 @@ public class PlayerDAO {
 				}
 			}
 		}
-
+		
+		
 		for (int i = 0; i < 3; i++) {
 			int cnt = 0;
 			PlayerDTO op = Op.get(Lotto[i]);
-
-			M();
+				
+			
+			for (int j = 0; j < temp.size(); j++) {
+				System.out.println(j + 1 + ", " + temp.get(j).getD_name() + " 능력치 : " + temp.get(j).getAbility());
+			}
 			System.out.print("출전 시킬 디지몬 : ");
-			int num1 = sc.nextInt();
-			PlayerDTO my = My.get(num1 - 1);
+			num1 = sc.nextInt();
+			PlayerDTO my = temp.get(num1 - 1);
+			
+			
 			System.out.println("상대의 캐릭터 : " + op.getD_name() + ", 능력 : " + op.getAbility());
 			System.out.println("나의 캐릭터 : " + my.getD_name() + " 능력 : " + my.getAbility());
 			
@@ -286,7 +298,7 @@ public class PlayerDAO {
 			
 			while (cnt < 3) {
 
-				if (op.getAbility() < my.getAbility()) {
+				if (op.getAbility() <= my.getAbility()+9) {
 					System.out.print("스트라이크!");
 					if (cnt == 0) {
 						System.out.println(" ● ○ ○ ");
@@ -319,7 +331,7 @@ public class PlayerDAO {
 				}
 			}
 			넘길거다.add(op);
-
+			temp.remove(num1-1);
 			
 		}
 
@@ -332,6 +344,8 @@ public class PlayerDAO {
 			System.out.println("상대팀이 승리했습니다");
 
 		}
+		
+		
 		System.out.println("========상대팀이 낸 스코어=========");
 
 		return 넘길거다;

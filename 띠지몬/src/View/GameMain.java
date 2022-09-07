@@ -86,7 +86,7 @@ public class GameMain {
 					while (true) {
 						System.out.println("환영합니다~~ " + nick + "님");
 
-						System.out.print("[1] 게임시작 [2]뒤로가기");
+						System.out.print("[1] 게임준비 [2]메인으로 돌아가기");
 						int myCSize = 0;
 						gcont.reSetAbility();
 						gcont.reSetC();
