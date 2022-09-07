@@ -111,7 +111,7 @@ public class PlayerDAO {
 			}
 
 			System.out.println();
-			System.out.print("영입 할 선수의 번호를 선택하세요 >> ");
+			System.out.print("영입 할 선수의 번호를 선택하세요! >> ");
 			int num = sc.nextInt();
 			My.add(All.get(num - 1));
 			All.remove(num - 1);
@@ -173,7 +173,7 @@ public class PlayerDAO {
 			System.out.println("다음 타자 준비!");
 			int cnt = 0;
 			for (int j = 0; j < temp.size(); j++) {
-				System.out.println(j + 1 + ", " + temp.get(j).getD_name() + " 능력치 : " + temp.get(j).getAbility());
+				System.out.println(j + 1 + ". " + temp.get(j).getD_name() + " 능력치 : " + temp.get(j).getAbility());
 			}
 			System.out.print("출전 시킬 디지몬 : ");
 			num1 = sc.nextInt();
@@ -181,7 +181,7 @@ public class PlayerDAO {
 			PlayerDTO my = null;
 
 			while (cnt < 3) {
-
+				
 				System.out.println("Are you ready? Y/N");
 				String ans = sc.next();
 
@@ -192,7 +192,7 @@ public class PlayerDAO {
 
 				if (ans.equals("N")||ans.equals("n")) {
 					System.out.println("============경기를 포기하시겠습니까? ================");
-					System.out.println("==============Yes    or  No===============");
+					System.out.println("============= [ Yes ] or [ No ] ==============");
 					String ans2 = sc.next();
 					if (ans2.equals("Y")||ans2.equals("y")) {
 						gi = false;
@@ -205,30 +205,33 @@ public class PlayerDAO {
 				if (my.getAbility() <= op.getAbility()+9) {
 					System.out.print("스트라이크!");
 					if (cnt == 0) {
+						System.out.println();
 						System.out.println(" ● ○ ○ ");
 					} else if (cnt == 1) {
+						System.out.println();
 						System.out.println(" ● ● ○ ");
 					} else if (cnt == 2) {
+						System.out.println();
 						System.out.println(" ● ● ● 삼진 아웃");
 					}
 					cnt++;
 				} else if (my.getAbility() >= op.getAbility() + 40) {
-					System.out.println("홈런 4득점!");
+					System.out.println("<< 홈런 4득점! >>");
 					my.score += 4;
 					goal1 += 4;
 					break;
 				} else if (my.getAbility() >= op.getAbility() + 30) {
-					System.out.println("3루타 3득점!");
+					System.out.println("<< 3루타 3득점! >>");
 					my.score += 3;
 					goal1 += 3;
 					break;
 				} else if (my.getAbility() >= op.getAbility() + 20) {
-					System.out.println("2루타 2득점!");
+					System.out.println("<< 2루타 2득점! >>");
 					my.score += 2;
 					goal1 += 2;
 					break;
 				} else if (my.getAbility() >= op.getAbility() + 10) {
-					System.out.println("1루타 1득점!");
+					System.out.println("<< 1루타 1득점! >>");
 					my.score += 1;
 					goal1 += 1;
 					break;
@@ -246,6 +249,7 @@ public class PlayerDAO {
 		System.out.println("========우리팀이 얻은 스코어=========");
 
 		return 넘길거다;
+		
 	}
 
 	public ArrayList<PlayerDTO> defense() {
@@ -273,8 +277,7 @@ public class PlayerDAO {
 				}
 			}
 		}
-		
-		
+
 		for (int i = 0; i < 3; i++) {
 			int cnt = 0;
 			PlayerDTO op = Op.get(Lotto[i]);
@@ -309,22 +312,22 @@ public class PlayerDAO {
 					}
 					cnt++;
 				} else if (op.getAbility() >= my.getAbility() + 40) {
-					System.out.println("홈런 4득점!");
+					System.out.println("<< 홈런 4득점! >>");
 					op.score += 4;
 					goal2 += 4;
 					break;
 				} else if (op.getAbility() >= my.getAbility() + 30) {
-					System.out.println("3루타 3득점!");
+					System.out.println("<< 3루타 3득점! >>");
 					op.score += 3;
 					goal2 += 3;
 					break;
 				} else if (op.getAbility() >= my.getAbility() + 20) {
-					System.out.println("2루타 2득점!");
+					System.out.println("<< 2루타 2득점! >>");
 					op.score += 2;
 					goal2 += 2;
 					break;
 				} else if (op.getAbility() >= my.getAbility() + 10) {
-					System.out.println("1루타 1득점!");
+					System.out.println("<< 1루타 1득점! >>");
 					op.score += 1;
 					goal2 += 1;
 					break;
@@ -344,8 +347,6 @@ public class PlayerDAO {
 			System.out.println("상대팀이 승리했습니다");
 
 		}
-		
-		
 		System.out.println("========상대팀이 낸 스코어=========");
 
 		return 넘길거다;
