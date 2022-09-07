@@ -10,9 +10,9 @@ public class DMusicController {
 	int index = 0;
 	
 	public DMusicController() {
-		mList.add(new DMusic("opening","dmusic/butterfly.mp3"));
-		mList.add(new DMusic("ending","dmusic/hidisimon.mp3"));
-		mList.add(new DMusic("battle","dmusic/bounce.mp3"));
+		mList.add(new DMusic("opening","C:\\Users\\smhrd\\Desktop\\dmusic\\butterfly.mp3"));
+		mList.add(new DMusic("ending","C:\\Users\\smhrd\\Desktop\\dmusic\\hidisimon.mp3"));
+		mList.add(new DMusic("battle","C:\\Users\\smhrd\\Desktop\\dmusic\\dmusic/bounce.mp3"));
 	}
 	
 	public void opening() {			

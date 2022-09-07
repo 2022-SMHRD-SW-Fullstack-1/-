@@ -43,7 +43,7 @@ public class GameMain {
 
 		while (true) {
 			gcont.conRs();
-			System.out.print("💙💙 [1] 회원가입 [2] 로그인 [3] 조회 [4] 닉네임 변경 [5] 탈퇴 [6] 종료 💙💙 >> ");
+			System.out.print("[1] 회원가입 [2] 로그인 [3] 조회 [4] 닉네임 변경 [5] 탈퇴 [6] 종료 >> ");
 			
 			
 			int menu = sc.nextInt();
@@ -65,7 +65,7 @@ public class GameMain {
 				String nick = sc.next();
 				result = mcont.conInsert(id, pw, nick);
 				if (result > 0) {
-					System.out.println("가입 성공😊😊. 환영합니다." + nick + "님!");
+					System.out.println("가입 성공. 환영합니다." + nick + "님!");
 				} 
 				
 			
@@ -86,9 +86,9 @@ public class GameMain {
 				if (nick != null) {
 
 					while (true) {
-						System.out.println("환영합니다~~😊😊 " + nick + "님");
+						System.out.println("환영합니다! " + nick + "님");
 
-						System.out.print("💙💙 [1] 게임 준비 [2] 메인으로 돌아가기 💙💙");
+						System.out.print("[1] 게임 준비 [2] 메인으로 돌아가기");
 						int myCSize = 0;
 						gcont.reSetAbility();
 						gcont.reSetC();

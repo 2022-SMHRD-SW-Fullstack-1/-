@@ -102,7 +102,7 @@ public class PlayerDAO {
 	}
 
 	public void choice(ArrayList<PlayerDTO> All) {
-		System.out.println("💙💙 4명의 선수를 영입 할 수 있습니다. 💙💙");
+		System.out.println("4명의 선수를 영입 할 수 있습니다.");
 		System.out.println();
 
 		for (int i = 1; i <= 4; i++) { // 4번 반복
@@ -111,7 +111,7 @@ public class PlayerDAO {
 			}
 
 			System.out.println();
-			System.out.print("💙💙 영입 할 선수의 번호를 선택하세요! 💙💙 >> ");
+			System.out.print("영입 할 선수의 번호를 선택하세요! >> ");
 			int num = sc.nextInt();
 			My.add(All.get(num - 1));
 			All.remove(num - 1);
@@ -133,13 +133,13 @@ public class PlayerDAO {
 			}
 		}
 
-		System.out.println("\n 💙💙 우리팀 선수 명단 💙💙");
+		System.out.println("\n우리팀 선수 명단 ");
 
 		for (int i = 0; i < My.size(); i++) {
 			System.out.println(My.get(i).getD_name() + " 능력치 : " + My.get(i).getAbility());
 		}
 
-		System.out.println("\n 💙💙 상대팀 선수 명단 💙💙");
+		System.out.println("\n상대팀 선수 명단 ");
 		for (int i = 0; i < My.size(); i++) {
 			System.out.println(Op.get(i).getD_name() + " 능력치 : " + Op.get(i).getAbility());
 		}
@@ -156,7 +156,7 @@ public class PlayerDAO {
 		} else {
 			
 			System.out.println(" ");
-			System.out.println("💙💙 선발된 선수가 없습니다. 엔트리를 먼저 생성 해주세요. 💙💙");
+			System.out.println("선발된 선수가 없습니다. 엔트리를 먼저 생성 해주세요.");
 			System.out.println("");
 			
 		}
@@ -346,11 +346,11 @@ public class PlayerDAO {
 
 		System.out.println("경기 종료! " + goal1 + " : " + goal2);
 		if (goal1 > goal2) {
-			System.out.println("우리팀이 승리했습니다! 👏👏");
+			System.out.println("우리팀이 승리했습니다!");
 		} else if (goal1 == goal2) {
 			System.out.println("무승부입니다!");
 		} else {
-			System.out.println("상대팀이 승리했습니다! 😥😥");
+			System.out.println("상대팀이 승리했습니다!");
 
 		}
 		System.out.println("========상대팀이 낸 스코어=========");
