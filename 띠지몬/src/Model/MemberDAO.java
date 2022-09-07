@@ -83,7 +83,7 @@ public class MemberDAO {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("등록된 아이디입니다. 다시 입력해주세요.😥😥");
 		} finally {
 			close();
 		}
