@@ -38,7 +38,7 @@ public class MemberDAO {
 			if (conn != null) {
 				System.out.println("");
 			} else {
-				System.out.println("접속 실패");
+				System.out.println("접속 실패!");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
