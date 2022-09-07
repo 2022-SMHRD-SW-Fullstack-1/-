@@ -20,26 +20,26 @@ public class GameMain {
 		Scanner sc = new Scanner(System.in);
 		GameController gcont = new GameController();
 		MemberController mcont = new MemberController();
-		
+
 		DMusicController dc = new DMusicController();
 		int index = 0;
-		
+
 		int result;
 		int b;
-		
+
 		dc.opening();
-		
-		System.out.println("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"
-					 +"\n"+"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡐⣎⡉⠉⠛⠓⢒⠻⡿⠿⠿⠿⠿⠿⢿⣽⠿⢿⠛⠓⠒⠛⠛⠉⠉⢩⠝⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"
-					 +"\n"+"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢻⣀⠘⣯⡟⡇⡀⢱⣒⣒⡶⠀⢀⡼⣿⠒⢺⠀⠘⠛⠛⠛⠋⢀⣺⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"
-					 +"\n"+"⣿⣿⣿⣿⣿⣟⠻⠿⠿⢿⣿⣿⡿⣌⣇⠀⢻⣧⣳⢀⠸⣿⠟⠀⡀⠹⣾⡇⠀⡌⠉⣉⣁⣀⣉⣁⣤⡼⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"
-					 +"\n"+"⣿⣿⣿⣿⡋⢷⠒⠀⢀⣀⡈⠙⢾⣏⠉⠄⠀⠤⠤⠤⠤⠧⠄⢸⡗⠀⣼⠃⠀⢣⠀⠉⢩⠭⠭⠭⠝⠉⠩⠷⠿⡟⣿⡏⠉⠉⣳⠉⣻⣿⣿⣿"
-				 	 +"\n"+"⣿⣿⣿⣿⣧⠘⣧⠀⠈⢧⠹⡄⠀⠛⠂⠈⠄⠀⢤⠤⠤⠤⠤⠼⡇⠀⣉⠀⠀⠘⠀⠀⡞⠀⢰⠤⢤⡄⠀⠀⣼⠁⡾⠀⠀⢰⠃⢠⣿⣿⣿⣿⣿"
-				 	 +"\n"+"⣿⣿⣿⣿⣿⣧⠘⣆⠀⠈⢧⠹⡄⠀⢶⣆⠈⠄⠈⣿⣿⣿⣿⣿⣆⣀⣀⣉⣀⣿⠁⠀⡇⠀⡾⣴⠋⠀⣠⠎⠛⠛⠁⠀⢠⠏⢠⣿⣿⣿⣿⣿"
-				 	 +"\n"+"⣿⣿⣿⣿⣿⣿⣦⡘⠳⢤⠈⠧⡽⠀⠈⣿⡄⠘⣤⠤⠤⠤⠤⠤⢿⠀⠀⠓⠶⠿⠶⠴⠃⢰⠟⠁⡀⠀⢹⡓⣲⠂⠀⢠⠏⢠⣿⣿⣿⣿⣿⣿"
-				 	 +"\n"+"⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠹⣄⣀⣀⡴⣯⠙⠤⠾⠶⠒⠒⠒⠒⣛⣛⡒⠒⠒⠒⠒⠒⠒⠺⠦⠜⢹⣀⣈⢧⡏⠀⢠⠋⢀⣿⣿⣿⣿⣿⣿⣿"
-				 	 +"\n"+"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣤⣤⣤⣾⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣿⣥⣬⣴⣏⣛⣁⣰⣿⣿⣿⣿⣿⣿⣿⣿"
-				 	 +"\n"+"⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+
+		System.out.println("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡐⣎⡉⠉⠛⠓⢒⠻⡿⠿⠿⠿⠿⠿⢿⣽⠿⢿⠛⠓⠒⠛⠛⠉⠉⢩⠝⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢻⣀⠘⣯⡟⡇⡀⢱⣒⣒⡶⠀⢀⡼⣿⠒⢺⠀⠘⠛⠛⠛⠋⢀⣺⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣟⠻⠿⠿⢿⣿⣿⡿⣌⣇⠀⢻⣧⣳⢀⠸⣿⠟⠀⡀⠹⣾⡇⠀⡌⠉⣉⣁⣀⣉⣁⣤⡼⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⡋⢷⠒⠀⢀⣀⡈⠙⢾⣏⠉⠄⠀⠤⠤⠤⠤⠧⠄⢸⡗⠀⣼⠃⠀⢣⠀⠉⢩⠭⠭⠭⠝⠉⠩⠷⠿⡟⣿⡏⠉⠉⣳⠉⣻⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣧⠘⣧⠀⠈⢧⠹⡄⠀⠛⠂⠈⠄⠀⢤⠤⠤⠤⠤⠼⡇⠀⣉⠀⠀⠘⠀⠀⡞⠀⢰⠤⢤⡄⠀⠀⣼⠁⡾⠀⠀⢰⠃⢠⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣧⠘⣆⠀⠈⢧⠹⡄⠀⢶⣆⠈⠄⠈⣿⣿⣿⣿⣿⣆⣀⣀⣉⣀⣿⠁⠀⡇⠀⡾⣴⠋⠀⣠⠎⠛⠛⠁⠀⢠⠏⢠⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣿⣦⡘⠳⢤⠈⠧⡽⠀⠈⣿⡄⠘⣤⠤⠤⠤⠤⠤⢿⠀⠀⠓⠶⠿⠶⠴⠃⢰⠟⠁⡀⠀⢹⡓⣲⠂⠀⢠⠏⢠⣿⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠹⣄⣀⣀⡴⣯⠙⠤⠾⠶⠒⠒⠒⠒⣛⣛⡒⠒⠒⠒⠒⠒⠒⠺⠦⠜⢹⣀⣈⢧⡏⠀⢠⠋⢀⣿⣿⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣤⣤⣤⣾⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣿⣥⣬⣴⣏⣛⣁⣰⣿⣿⣿⣿⣿⣿⣿⣿" + "\n"
+				+ "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
 
 		while (true) {
 			gcont.conRs();
@@ -69,31 +69,69 @@ public class GameMain {
 				}
 			} else if (menu == 2) {
 				System.out.println(" __         _____       ____       ______      __  __     \r\n"
-								 + "/\\ \\       /\\  __`\\    /\\  _`\\    /\\__  _\\    /\\ \\/\\ \\    \r\n"
-								 + "\\ \\ \\      \\ \\ \\/\\ \\   \\ \\ \\L\\_\\  \\/_/\\ \\/    \\ \\ `\\\\ \\   \r\n"
-								 + " \\ \\ \\  __  \\ \\ \\ \\ \\   \\ \\ \\L_L     \\ \\ \\     \\ \\ , ` \\  \r\n"
-								 + "  \\ \\ \\L\\ \\  \\ \\ \\_\\ \\   \\ \\ \\/, \\    \\_\\ \\__   \\ \\ \\`\\ \\ \r\n"
-							   	 + "   \\ \\____/   \\ \\_____\\   \\ \\____/    /\\_____\\   \\ \\_\\ \\_\\\r\n"
-								 + "    \\/___/     \\/_____/    \\/___/     \\/_____/    \\/_/\\/_/\r\n");
+						+ "/\\ \\       /\\  __`\\    /\\  _`\\    /\\__  _\\    /\\ \\/\\ \\    \r\n"
+						+ "\\ \\ \\      \\ \\ \\/\\ \\   \\ \\ \\L\\_\\  \\/_/\\ \\/    \\ \\ `\\\\ \\   \r\n"
+						+ " \\ \\ \\  __  \\ \\ \\ \\ \\   \\ \\ \\L_L     \\ \\ \\     \\ \\ , ` \\  \r\n"
+						+ "  \\ \\ \\L\\ \\  \\ \\ \\_\\ \\   \\ \\ \\/, \\    \\_\\ \\__   \\ \\ \\`\\ \\ \r\n"
+						+ "   \\ \\____/   \\ \\_____\\   \\ \\____/    /\\_____\\   \\ \\_\\ \\_\\\r\n"
+						+ "    \\/___/     \\/_____/    \\/___/     \\/_____/    \\/_/\\/_/\r\n");
 				System.out.print("아이디 입력 : ");
 				String id = sc.next();
 				System.out.print("비밀번호 입력 : ");
 				String pw = sc.next();
 				String nick = mcont.conLogin(id, pw);
-				
+
 				if (nick != null) {
-					System.out.println("환영합니다~~ " + nick + "님");
-					System.out.print("게임을 시작하시겠습니까?? Y/N >>");
-					String ans = sc.next();
-					if (ans.equals("Y") || ans.equals("y")) {
-						a = 1;
-						break;
+
+					while (true) {
+						System.out.println("환영합니다~~ " + nick + "님");
+
+						System.out.print("[1] 게임시작 [2]뒤로가기");
+						int myCSize = 0;
+						gcont.reSetAbility();
+						gcont.reSetC();
+
+						int ans = sc.nextInt();
+						if (ans == 1) {
+
+							dc.battle();
+
+							while (true) {
+								gcont.printMenu();
+								int menu1 = sc.nextInt();
+								if (menu1 == 1) { // 엔트리 생성 & 선택
+									System.out.println("디지몬들을 불러오고 있습니다.");
+									ArrayList<PlayerDTO> resultList = new ArrayList<PlayerDTO>();
+									resultList = gcont.conSelect();
+									gcont.conChoice(resultList);
+									myCSize++;
+								} else if (menu1 == 2) { // 배틀
+									if (myCSize != 0) {
+										gcont.conAtt();
+										gcont.conDef();
+									} else {
+										System.out.println("엔트리를 먼저 생성 해주세요.");
+									}
+									break;
+								} else if (menu1 == 3) { // 명단 확인
+									gcont.conCheck();
+								} else if (menu1 == 4) { // 선수 랭킹
+									gcont.conRank();
+								} else if (menu1 == 5) {
+									break; 
+								}
+							}
+						} else if (ans == 2) {
+							break;
+						} else {
+							System.out.println("1 or 2만 입력해주세요.");
+						}
+
 					}
-				} else {
-					System.out.println("로그인 정보를 다시 확인 해주세요");
-					a = 0;
 				}
-			} else if (menu == 3) { // 조회 기능
+			}
+
+			else if (menu == 3) { // 조회 기능
 				ArrayList<MemberDTO> resultList = new ArrayList<MemberDTO>();
 				resultList = mcont.conSelect();
 				for (int i = 0; i < resultList.size(); i++) {
@@ -162,29 +200,8 @@ public class GameMain {
 					}
 				}
 			}
-//================================================================================
+
 		}
 
-			if (a == 1) {
-				dc.battle();
-				while (true) {
-					gcont.printMenu();
-					int menu = sc.nextInt();
-					if (menu == 1) { // 엔트리 생성 & 선택
-						System.out.println("디지몬들을 불러오고 있습니다.");
-						ArrayList<PlayerDTO> resultList = new ArrayList<PlayerDTO>();
-						resultList = gcont.conSelect();
-						gcont.conChoice(resultList);
-					} else if (menu == 2) { // 배틀
-						gcont.conAtt();
-						gcont.conDef();
-					} else if (menu == 3) { // 명단 확인
-						gcont.conCheck();
-					} else if (menu == 4) { // 선수 랭킹
-						gcont.conRank();
-					}
-				}
-			}
-		
 	}
 }

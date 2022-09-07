@@ -36,7 +36,7 @@ public class MemberDAO {
 			// 데이터베이스와의 연결을 해주는 커넥션이다.
 
 			if (conn != null) {
-				System.out.println("접속 성공");
+				System.out.println("");
 			} else {
 				System.out.println("접속 실패");
 			}

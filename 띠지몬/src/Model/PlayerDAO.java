@@ -41,7 +41,7 @@ public class PlayerDAO {
 			// 데이터베이스와의 연결을 해주는 커넥션이다.
 
 			if (conn != null) {
-				System.out.println("접속 성공");
+				System.out.println("");
 			} else {
 				System.out.println("접속 실패");
 			}
@@ -153,18 +153,16 @@ public class PlayerDAO {
 				System.out.println("나의 선수 명단 : ");
 				System.out.println(i + 1 + ", " + My.get(i).getD_name() + " 능력치 :  " + My.get(i).getAbility());
 			}
-		}else {
+		} else {
 			System.out.println("엔트리를 먼저 생성 해주세요.");
 		}
 	}
 
 	public ArrayList<PlayerDTO> attack() {
+
 		ArrayList<PlayerDTO> temp = new ArrayList<>();
 		ArrayList<PlayerDTO> 넘길거다 = new ArrayList<>();
-		
-		
-		
-		
+
 		for (int i = 0; i < My.size(); i++) {
 			temp.add(My.get(i));
 		}
@@ -192,12 +190,15 @@ public class PlayerDAO {
 				my = temp.get(num1 - 1);
 				PlayerDTO op = Op.get(num);
 
-				if (ans.equals("N")) {
-					System.out.println("경기를 포기하시겠습니까? Y/N");
+				if (ans.equals("N")||ans.equals("n")) {
+					System.out.println("============경기를 포기하시겠습니까? ================");
+					System.out.println("==============Yes    or  No===============");
 					String ans2 = sc.next();
-					if (ans2.equals("Y")) {
+					if (ans2.equals("Y")||ans2.equals("y")) {
 						gi = false;
 						break;
+					}else {
+						System.out.println("===========게임계속 진행합니다.============");
 					}
 				}
 
@@ -242,11 +243,13 @@ public class PlayerDAO {
 			}
 		}
 		System.out.println("공수 교대!!!!!!!\n");
-		System.out.println();
+		System.out.println("========우리팀이 얻은 스코어=========");
+
 		return 넘길거다;
 	}
 
 	public ArrayList<PlayerDTO> defense() {
+
 		ArrayList<PlayerDTO> 넘길거다 = new ArrayList<>();
 		ArrayList<PlayerDTO> temp = new ArrayList<>();
 
@@ -275,7 +278,12 @@ public class PlayerDAO {
 			PlayerDTO my = My.get(num1 - 1);
 			System.out.println("상대의 캐릭터 : " + op.getD_name() + ", 능력 : " + op.getAbility());
 			System.out.println("나의 캐릭터 : " + my.getD_name() + " 능력 : " + my.getAbility());
+			
+			
+			
 
+			//My.remove(num1 - 1);
+			
 			while (cnt < 3) {
 
 				if (op.getAbility() < my.getAbility()) {
@@ -312,6 +320,7 @@ public class PlayerDAO {
 			}
 			넘길거다.add(op);
 
+			
 		}
 
 		System.out.println("경기 종료! " + goal1 + " : " + goal2);
@@ -321,7 +330,10 @@ public class PlayerDAO {
 			System.out.println("무승부입니다");
 		} else {
 			System.out.println("상대팀이 승리했습니다");
+
 		}
+		System.out.println("========상대팀이 낸 스코어=========");
+
 		return 넘길거다;
 	}
 
@@ -405,7 +417,7 @@ public class PlayerDAO {
 	}
 
 	public void reSetAbility() {
-		
+
 		getCon();
 		try {
 			String sq = "UPDATE playerinfo SET d_ability = ROUND(DBMS_RANDOM.VALUE(0, 100)) WHERE d_name is not null";
@@ -417,6 +429,13 @@ public class PlayerDAO {
 		} finally {
 			close();
 		}
+
+	}
+	public void reSetC() {
+		
+		My.clear();
+		
+		Op.clear();
 		
 	}
 

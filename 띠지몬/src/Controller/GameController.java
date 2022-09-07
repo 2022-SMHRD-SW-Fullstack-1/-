@@ -10,7 +10,7 @@ public class GameController implements GameInterface{
 	PlayerDAO dao = new PlayerDAO();
 	
 	public void printMenu() {
-		System.out.println("[1] 엔트리 생성 [2] 배틀 시작 [3] 선수 명단 확인 [4] 선수 랭킹 확인");
+		System.out.println("[1] 엔트리 생성 [2] 배틀 시작 [3] 선수 명단 확인 [4] 선수 랭킹 확인 [5] 뒤로가기");
 	}
 	
 	public ArrayList<PlayerDTO> conSelect() { 
@@ -55,6 +55,11 @@ public class GameController implements GameInterface{
 	public void conRs() {
 		dao.rs();
 	}
+	public void reSetAbility() {
+		dao.reSetAbility();
+	}
+	public void reSetC() {
 	
-	
+		dao.reSetC();
+	}
 }
