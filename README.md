@@ -47,5 +47,6 @@
 
 
 ## 7. 실행파일
-[DigimonBaseBall (4).zip](https://github.com/2022-SMHRD-SW-Fullstack-1/Digimon/files/9522780/DigimonBaseBall.4.zip)
+
 ![맨앞조_DigimonBaseBall](https://user-images.githubusercontent.com/112401561/189012669-f74446c1-e03b-4824-975b-293ffb314a41.gif)
+[실행파일 다운로드][DigimonBaseBall (4).zip](https://github.com/2022-SMHRD-SW-Fullstack-1/Digimon/files/9522780/DigimonBaseBall.4.zip)
