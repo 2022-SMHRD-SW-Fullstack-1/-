@@ -1,4 +1,3 @@
-![sdfsf](https://user-images.githubusercontent.com/108584477/189008478-35072835-0ee4-434e-864e-962b99436635.jpg)
 
 
 # 제목
@@ -27,3 +26,5 @@ public class 첫자바 {
 ---|---|
 9/1~9/3|프로젝트기획
 9/4~9/5|DB설계
+
+
