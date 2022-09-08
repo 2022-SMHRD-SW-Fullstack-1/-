@@ -14,28 +14,35 @@
 ## 3. 개발환경
 * 사용언어 : java 1.8
 * 데이터베이스: oracle 11g
-### 소스코드넣기
-```
-public class 첫자바 {
-	public static void main(String[] args) {
-		
-	}
-}
-```
-### 링크넣기
-[참고사이트](https://blog.naver.com/jang0_0yw)
-### 목록넣기
-* 깃허브활용
-  * push하기
-    * push1
-    * push2
-  * pull하기
-  1. 첫번쨰
-  2. 두번쨰
-### 테이블 만들기
+
+## 4. 제작일정
 일정|상세내용
 ---|---|
-9/1~9/3|프로젝트기획
-9/4~9/5|DB설계
+9/2|프로젝트 기획 및 설계
+9/5|역할 분담 DB설계
+9/6|기능구현
+9/7|발표준비
+## 5. 팀원단위 업무 분장 및 결과
+이름|역할 및 분담 임무
+---|---|
+문재승|프로젝트총괄 / 배틀시작 기능구현 /소스 수집 및 공유
+박진형|엔트리생성,내캐릭터확인, 랭킹확인 기능구현
+김지연|메인페이지 기능구현
+노한서|DB 관리및 JDBC 구현
+
+
+
+## 6. 기능 구현
+
+#### 회원 관리
+![image](https://user-images.githubusercontent.com/108584477/189013568-82aa8bfe-dff3-4190-af01-06ddb00460d7.png)
+
+#### 플레이어 관리
+![image](https://user-images.githubusercontent.com/108584477/189013602-29a19e53-9036-41e7-847c-8b04dcd64f82.png)
+
+
+#### 배틀
+![image](https://user-images.githubusercontent.com/108584477/189013652-e4cb0082-fffa-4239-bf20-d4a4ad2ea570.png)
+
 
 
